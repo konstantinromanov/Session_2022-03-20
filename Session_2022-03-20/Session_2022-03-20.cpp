@@ -9,21 +9,60 @@ template<typename T>
 void checkPalindrome(vector<T> col);
 
 class Invoice {
-	//private:
-
+private:
+	string mTypeNumber;
+	string mDescription;
+	int mQty;
+	int mPrice;
 public:
+	Invoice() {
+
+	}
 
 	Invoice(string typeNumber, string description, int qty) {
-		TypeNumber = typeNumber;
-		Description = description;
-		Qty = qty;
+		mTypeNumber = typeNumber;
+		mDescription = description;
+		mQty = qty;
 	};
 
-	string TypeNumber;
-	string Description;
-	int Qty;
-	int price = 0;
+	Invoice(string typeNumber, string description, int qty, int price) {
+		mTypeNumber = typeNumber;
+		mDescription = description;
+		mQty = qty;
+		mPrice = price;
+	};
 
+	string getTypeNumber() {
+		return mTypeNumber;
+	}
+
+	string getDescription() {
+		return mDescription;
+	}
+
+	int getQty() {
+		return mQty;
+	}
+
+	int getPrice() {
+		return mPrice;
+	}
+
+	void setTypeNumber(string typeNumber) {
+		mTypeNumber = typeNumber;
+	}
+
+	void setDescription(string description) {
+		mDescription = description;
+	}
+
+	void setQty(int qty) {
+		mQty = qty;
+	}
+
+	void setPrice(int price) {
+		mPrice = price;
+	}
 };
 
 
@@ -35,9 +74,18 @@ int main()
 	checkPalindrome(collection1);
 	checkPalindrome(collection2);*/
 
-	Invoice invoice1 = Invoice("01", "This is item 1", 2);
+	Invoice invoice1 = Invoice("01", "This is item 1", 2, 10);
 
-	cout << invoice1.Description << invoice1.TypeNumber << invoice1.Qty;
+	cout << invoice1.getDescription() << invoice1.getTypeNumber() << invoice1.getQty() << endl;
+
+	Invoice invoice2 = Invoice();
+
+	invoice2.setDescription("This is item 2");
+	invoice2.setPrice(2);
+	invoice2.setQty(22);
+	invoice2.setTypeNumber("02");
+
+	cout << invoice2.getTypeNumber() << " " << invoice2.getDescription() << endl;
 }
 
 
