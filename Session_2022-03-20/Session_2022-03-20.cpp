@@ -2,10 +2,37 @@
 //
 
 #include <iostream>
+#include <vector>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	//std::cout << "Hello World!\n";
+
+	vector<int> collection1 = { 1, 2, 3, 4, 3, 2, 21 };
+
+	int colLenght = collection1.size();
+	bool isPalindrome = true;
+
+	for (size_t i = 0; i < colLenght; i++)
+	{
+		if (collection1[i] != collection1[colLenght - 1 - i])
+		{
+			isPalindrome = false;
+			break;
+		}
+	}
+
+	/*if (isPalindrome)
+	{
+		cout << "It is a palindrome";
+	}
+	else
+	{
+		cout << "It is not a palindrome";
+	}*/
+
+	cout << (isPalindrome ? "It is a palindrome" : "It is not a palindrome");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
