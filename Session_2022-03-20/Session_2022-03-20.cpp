@@ -24,13 +24,12 @@ int main()
 	invoice2.setPrice(2);
 	invoice2.setQty(22);
 	invoice2.setTypeNumber("02");
+	Invoice invoice3 = Invoice("01", "This is item 1", -3, -30);
 
 	//cout << invoice1.getDescription() << invoice1.getTypeNumber() << invoice1.getQty() << endl;
-
-	
+		
 	cout << invoice1.getInvoiceAmount();
 	
-
 	//cout << invoice2.getTypeNumber() << " " << invoice2.getDescription() << endl;
 }
 

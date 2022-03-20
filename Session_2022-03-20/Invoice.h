@@ -25,8 +25,8 @@ public:
 	Invoice(string typeNumber, string description, int qty, int price) {
 		mTypeNumber = typeNumber;
 		mDescription = description;
-		mQty = qty;
-		mPrice = price;
+		setQty(qty);
+		setPrice(price);
 	};
 
 	string getTypeNumber() {
@@ -54,11 +54,11 @@ public:
 	}
 
 	void setQty(int qty) {
-		mQty = qty;
+		mQty = (qty >= 0) ? qty : 0;
 	}
 
 	void setPrice(int price) {
-		mPrice = price;
+		mPrice = (price >= 0) ? price : 0;
 	}
 
 	int getInvoiceAmount();
