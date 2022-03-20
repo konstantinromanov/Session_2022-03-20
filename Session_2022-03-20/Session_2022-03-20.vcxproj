@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="Session_2022-03-20.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Invoice.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
