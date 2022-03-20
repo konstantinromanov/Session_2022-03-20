@@ -23,7 +23,7 @@ void checkPalindrome(vector<T> col) {
 	int colLenght = col.size();
 	bool isPalindrome = true;
 
-	for (size_t i = 0; i < colLenght; i++)
+	for (size_t i = 0; i < colLenght / 2; i++)
 	{
 		if (col[i] != col[colLenght - 1 - i])
 		{
