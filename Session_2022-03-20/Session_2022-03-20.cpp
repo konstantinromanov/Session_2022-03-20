@@ -4,11 +4,12 @@
 #include <iostream>
 #include <vector>
 #include "Invoice.h"
+#include <iomanip>
 using namespace std;
 
 template<typename T>
 void checkPalindrome(vector<T> col);
-
+void printInvoiceTable(vector<Invoice> invoices);
 
 int main()
 {
@@ -18,22 +19,45 @@ int main()
 	checkPalindrome(collection1);
 	checkPalindrome(collection2);*/
 
-	Invoice invoice1 = Invoice("01", "This is item 1", 2, 10);
+	vector<Invoice> invoices = {
+
+		Invoice("05", "This is item 5", -5, 50),
+		Invoice("06", "This is item 6", -6, 60)
+
+	};
+
+	printInvoiceTable(invoices);
+
+	/*Invoice invoice1 = Invoice("01", "This is item 1", 2, 10);
 	Invoice invoice2 = Invoice();
 	invoice2.setDescription("This is item 2");
 	invoice2.setPrice(2);
 	invoice2.setQty(22);
 	invoice2.setTypeNumber("02");
-	Invoice invoice3 = Invoice("01", "This is item 1", -3, -30);
+	Invoice invoice3 = Invoice("03", "This is item 3", -3, -30);
+	Invoice invoice4 = Invoice("04", "This is item 4", -4, -40);
+	Invoice invoice5 = Invoice("05", "This is item 5", -5, 50);
+	Invoice invoice6 = Invoice("06", "This is item 6", -6, 60);*/
+
 
 	//cout << invoice1.getDescription() << invoice1.getTypeNumber() << invoice1.getQty() << endl;
-		
-	cout << invoice1.getInvoiceAmount();
-	
+
+	//cout << invoice1.getInvoiceAmount();
+
 	//cout << invoice2.getTypeNumber() << " " << invoice2.getDescription() << endl;
 }
 
+void printInvoiceTable(vector<Invoice> invoices) {
+	cout << setw(5) << "Nr" << setw(10) << "Type Number" << setw(20) 
+		<< "Description" << setw(10) << "Qty" << setw(10) << "Price" << endl;
 
+	for (size_t i = 0; i < invoices.size(); i++)
+	{
+		cout << setw(5) << i + 1 << setw(10) << invoices[i].getTypeNumber() 
+			<< setw(20) << invoices[i].getDescription() << setw(10)
+			<< setw(10) << invoices[i].getQty() << setw(10) << invoices[i].getPrice() << endl;
+	}
+}
 
 template<typename T>
 void checkPalindrome(vector<T> col) {
