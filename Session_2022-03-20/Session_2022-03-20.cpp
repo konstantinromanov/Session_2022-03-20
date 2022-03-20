@@ -10,6 +10,7 @@ using namespace std;
 template<typename T>
 void checkPalindrome(vector<T> col);
 void printInvoiceTable(vector<Invoice> invoices);
+void printLine(int width);
 
 int main()
 {
@@ -20,10 +21,11 @@ int main()
 	checkPalindrome(collection2);*/
 
 	vector<Invoice> invoices = {
-
-		Invoice("05", "This is item 5", -5, 50),
-		Invoice("06", "This is item 6", -6, 60)
-
+		Invoice("01", "This is item 1", -1, 50),
+		Invoice("02", "This is item 2", -6, 60),
+		Invoice("03", "This is item 3", 55, 60),
+		Invoice("04", "This is item 443", 6, 60),
+		Invoice("05", "This is item 33", 33, 60)
 	};
 
 	printInvoiceTable(invoices);
@@ -48,15 +50,35 @@ int main()
 }
 
 void printInvoiceTable(vector<Invoice> invoices) {
-	cout << setw(5) << "Nr" << setw(10) << "Type Number" << setw(20) 
-		<< "Description" << setw(10) << "Qty" << setw(10) << "Price" << endl;
+	cout
+		<< left
+		<< setw(5) << "Nr"
+		<< setw(10) << "Type Nr"
+		<< setw(20) << "Description"
+		<< setw(10) << "Qty"
+		<< setw(10) << "Price" << endl;
+
+	printLine(50);
 
 	for (size_t i = 0; i < invoices.size(); i++)
 	{
-		cout << setw(5) << i + 1 << setw(10) << invoices[i].getTypeNumber() 
+		cout 
+			//<< setfill('.') 
+			<< left
+			<< setw(5) << i + 1
+			<< setw(10) << invoices[i].getTypeNumber()
 			<< setw(20) << invoices[i].getDescription() << setw(10)
-			<< setw(10) << invoices[i].getQty() << setw(10) << invoices[i].getPrice() << endl;
+			<< setw(10) << invoices[i].getQty() 
+			<< setw(10) << invoices[i].getPrice() << endl;
 	}
+}
+
+void printLine(int width) {
+	for (size_t i = 0; i < width; i++)
+	{
+		cout << "-";
+	}
+	cout << endl;
 }
 
 template<typename T>
