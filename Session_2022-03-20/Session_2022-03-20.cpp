@@ -5,16 +5,20 @@
 #include <vector>
 using namespace std;
 
-void checkPalindrome(vector<int> col);
+template<typename T>
+void checkPalindrome(vector<T> col);
 
 int main()
 {
 	vector<int> collection1 = { 1, 2, 3, 4, 3, 2, 21 };
+	vector<string> collection2 = { "a", "b", "c", "b", "a" };
 
 	checkPalindrome(collection1);
+	checkPalindrome(collection2);
 }
 
-void checkPalindrome(vector<int> col) {
+template<typename T>
+void checkPalindrome(vector<T> col) {
 
 	int colLenght = col.size();
 	bool isPalindrome = true;
@@ -28,7 +32,7 @@ void checkPalindrome(vector<int> col) {
 		}
 	}
 
-	cout << (isPalindrome ? "It is a palindrome" : "It is not a palindrome");
+	cout << (isPalindrome ? "It is a palindrome\n" : "It is not a palindrome\n");
 };
 
 
