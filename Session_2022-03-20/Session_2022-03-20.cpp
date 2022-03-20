@@ -8,14 +8,39 @@ using namespace std;
 template<typename T>
 void checkPalindrome(vector<T> col);
 
+class Invoice {
+	//private:
+
+public:
+
+	Invoice(string typeNumber, string description, int qty) {
+		TypeNumber = typeNumber;
+		Description = description;
+		Qty = qty;
+	};
+
+	string TypeNumber;
+	string Description;
+	int Qty;
+	int price = 0;
+
+};
+
+
 int main()
 {
-	vector<int> collection1 = { 1, 2, 3, 4, 3, 2, 21 };
+	/*vector<int> collection1 = { 1, 2, 3, 4, 3, 2, 21 };
 	vector<string> collection2 = { "a", "b", "c", "b", "a" };
 
 	checkPalindrome(collection1);
-	checkPalindrome(collection2);
+	checkPalindrome(collection2);*/
+
+	Invoice invoice1 = Invoice("01", "This is item 1", 2);
+
+	cout << invoice1.Description << invoice1.TypeNumber << invoice1.Qty;
 }
+
+
 
 template<typename T>
 void checkPalindrome(vector<T> col) {
