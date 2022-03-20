@@ -60,4 +60,11 @@ public:
 	void setPrice(int price) {
 		mPrice = price;
 	}
+
+	int getInvoiceAmount();
 };
+
+int Invoice::getInvoiceAmount() {
+	return getQty() * getPrice();
+}
+

@@ -19,17 +19,19 @@ int main()
 	checkPalindrome(collection2);*/
 
 	Invoice invoice1 = Invoice("01", "This is item 1", 2, 10);
-
-	cout << invoice1.getDescription() << invoice1.getTypeNumber() << invoice1.getQty() << endl;
-
 	Invoice invoice2 = Invoice();
-
 	invoice2.setDescription("This is item 2");
 	invoice2.setPrice(2);
 	invoice2.setQty(22);
 	invoice2.setTypeNumber("02");
 
-	cout << invoice2.getTypeNumber() << " " << invoice2.getDescription() << endl;
+	//cout << invoice1.getDescription() << invoice1.getTypeNumber() << invoice1.getQty() << endl;
+
+	
+	cout << invoice1.getInvoiceAmount();
+	
+
+	//cout << invoice2.getTypeNumber() << " " << invoice2.getDescription() << endl;
 }
 
 
