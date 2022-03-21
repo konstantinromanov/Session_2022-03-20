@@ -11,23 +11,11 @@ private:
 	string mDescription;
 	int mQty;
 	int mPrice;
+
 public:
-	Invoice() {
+	Invoice() {}
 
-	}
-
-	Invoice(string typeNumber, string description, int qty) {
-		mTypeNumber = typeNumber;
-		mDescription = description;
-		mQty = qty;
-	};
-
-	Invoice(string typeNumber, string description, int qty, int price) {
-		mTypeNumber = typeNumber;
-		mDescription = description;
-		setQty(qty);
-		setPrice(price);
-	};
+	Invoice(string typeNumber, string description, int qty, int price);
 
 	string getTypeNumber() {
 		return mTypeNumber;
@@ -63,6 +51,13 @@ public:
 
 	int getInvoiceAmount();
 };
+
+Invoice::Invoice(string typeNumber, string description, int qty, int price) {
+	mTypeNumber = typeNumber;
+	mDescription = description;
+	setQty(qty);
+	setPrice(price);
+}
 
 int Invoice::getInvoiceAmount() {
 	return getQty() * getPrice();
